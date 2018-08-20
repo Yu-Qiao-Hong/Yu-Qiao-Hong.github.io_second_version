@@ -6,7 +6,7 @@ modified: 2016-04-12
 tags: [C#]
 ---
 
-## 使用時機 ##
+### 使用時機
 
 操作資料庫或是定義一資料結構時，使用到C#的Value type，例如:
 
@@ -41,7 +41,7 @@ if(c.x == -9999) // not assignment
 
 ----------
 
-## Nullable Type ##
+### Nullable Type
 
 有兩種宣告方式，宣告完後初始值皆為null
 第一種:
@@ -73,7 +73,7 @@ else
 
 ----------
 
-## Nullable type assign to non-nullable type ##
+### Nullable type assign to non-nullable type
 
 若現在我要把x的值assign給y,
 
