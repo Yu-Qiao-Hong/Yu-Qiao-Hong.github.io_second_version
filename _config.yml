@@ -1,14 +1,14 @@
 # SITE CONFIGURATION
 baseurl:
 url: "https://Yu-Qiao-Hong.github.io"
-title: Iverson's Coding Life # site's title
+title: Coding Life # site's title
 description: "A website with blog posts and pages" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Iverson's Coding Life # blog's title
+  title: Coding Life # blog's title
   avatar: assets/img/coding_life.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
@@ -18,10 +18,10 @@ theme_settings:
      <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
   header_text_feature_image: assets/img/pexels/triangular.jpeg
   footer_text: >
-   © 2018 Iverson Hong. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+   © 2018 Iverson Hong. Powered by <a href="https://jekyllrb.com/">Jekyll</a>
 
   # Icons
-  rss: true  # Make sure you created a feed.xml with feed.xml layout
+  rss: # Make sure you created a feed.xml with feed.xml layout
   email_address: "iverson.hong@deltaww.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
