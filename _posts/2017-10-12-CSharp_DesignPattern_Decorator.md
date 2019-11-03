@@ -12,17 +12,15 @@ tags: [C#, Design Pattern]
 
 ----------
 
-### 架構
+### UML
 
-屬於 Structural Patterns 之一
-
-![]({{ "/images/2019-11-03-21-23-50.png" | relative_url }})
+![]({{ "images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
 
 ----------
 
 ### 優點
 
-* 使用合成的方式動態地增職責，而非只用繼承。
+* 使用**合成**的方式動態地增職責，而非只用繼承。
 
 * 具體類別與裝飾類別獨立設計，可依據需求動態增加裝飾的職責，且不需修改原有具體類別，符合開放封閉原則。
 
@@ -40,6 +38,52 @@ tags: [C#, Design Pattern]
 
 ----------
 
-[[C#系列文章]](http://yu-qiao-hong.github.io/tags/#C#)
+### 範例
 
-[[Design Pattern系列文章]](http://yu-qiao-hong.github.io/tags/#Design Pattern)
+寫一漢堡類別，允許可動態地增加其多種配料，並計算出最後價錢。
+
+
+定義一漢堡虛擬類別
+~~~c#
+public abstract class Hamburger
+{
+    public abstract string Name { get; }
+
+    public abstract int Price { get; }
+}
+~~~
+
+定義兩個基本款漢堡；起司堡、大麥克
+~~~c#
+public class Cheeseburger : Hamburger
+{
+    public override string Name
+    {
+        get => "Cheeseburger";
+    }
+
+    public override int Price
+    {
+        get => 80;
+    }
+}
+
+class BigMac : Hamburger
+{
+    public override string Name
+    {
+        get => "BigMac";
+    }
+
+    public override int Price
+    {
+        get => 100;
+    }
+}
+~~~
+
+----------
+
+[[C#系列文章]](https://yu-qiao-hong.github.io/tags/#C%23)
+
+[[Design Pattern系列文章]](https://yu-qiao-hong.github.io/tags/#Design+Pattern)
