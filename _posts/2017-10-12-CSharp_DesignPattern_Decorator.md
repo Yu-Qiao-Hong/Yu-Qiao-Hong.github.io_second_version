@@ -42,11 +42,11 @@ tags: [C#, Design Pattern]
 
 寫一漢堡類別，允許可動態地增加其多種配料，並計算出最後價錢。
 
-##### UML：
+#### UML：
 
 ![]({{ "/Images/Decorator Pattern/2019-11-03-23-45-35.png" | relative_url }})
 
-##### 定義一漢堡虛擬類別：
+#### 定義一漢堡虛擬類別：
 ~~~c#
 public abstract class Hamburger
 {
@@ -56,7 +56,7 @@ public abstract class Hamburger
 }
 ~~~
 
-##### 定義兩個基本款漢堡；起司堡、大麥克：
+#### 定義兩個基本款漢堡；起司堡、大麥克：
 ~~~c#
 public class Cheeseburger : Hamburger
 {
@@ -85,7 +85,7 @@ class BigMac : Hamburger
 }
 ~~~
 
-##### 裝飾類別，繼承漢堡類別：
+#### 裝飾類別，繼承漢堡類別：
 ~~~c#
 public abstract class BurgerDecoratorBase : Hamburger
 {
@@ -98,7 +98,7 @@ public abstract class BurgerDecoratorBase : Hamburger
 }
 ~~~
 
-##### 實際要加入漢堡的東西，繼承裝飾類別：
+#### 實際要加入漢堡的東西，繼承裝飾類別：
 ~~~c#
 // 加牛肉
 public class BeefDecorator : BurgerDecoratorBase
@@ -155,9 +155,9 @@ public class PicklesDecorator : BurgerDecoratorBase
 }
 ~~~
 
-##### client 端：
+#### client 端：
 ~~~c#
-Hamburger burger1 = new Cheeseburger();
+Hamburger burger1 = new Cheeseburger(); // 80
 burger1 = new BeefDecorator(burger1); // +20
 burger1 = new LettuceDecorator(burger1); // +5
 burger1 = new PicklesDecorator(burger1); // +5
@@ -167,7 +167,7 @@ Console.WriteLine("burger1 Name: " + burger1.Name);
 Console.WriteLine("burger1 Price: " + burger1.Price);
 Console.WriteLine("======================================");
 
-Hamburger burger2 = new BigMac();
+Hamburger burger2 = new BigMac(); // 100
 burger2 = new LettuceDecorator(burger2); // +5
 burger2 = new PicklesDecorator(burger2); // +5
 
@@ -176,7 +176,7 @@ Console.WriteLine("burger2 Price: " + burger2.Price);
 Console.WriteLine("======================================");
 ~~~
 
-##### 輸出結果：
+#### 輸出結果：
 ```
 burger1 Name: Cheeseburger, add Beef, add Lettuce, add Pickles, add Beef
 burger1 Price: 130
