@@ -14,7 +14,13 @@ tags: [C#, Design Pattern]
 
 ### UML
 
-![]({{ "images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
+1
+
+![]({{ ".Images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
+
+2
+
+![]({{ "/Images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
 
 ----------
 
@@ -43,7 +49,7 @@ tags: [C#, Design Pattern]
 寫一漢堡類別，允許可動態地增加其多種配料，並計算出最後價錢。
 
 
-定義一漢堡虛擬類別
+#### 定義一漢堡虛擬類別：
 ~~~c#
 public abstract class Hamburger
 {
@@ -53,7 +59,7 @@ public abstract class Hamburger
 }
 ~~~
 
-定義兩個基本款漢堡；起司堡、大麥克
+#### 定義兩個基本款漢堡；起司堡、大麥克：
 ~~~c#
 public class Cheeseburger : Hamburger
 {
@@ -82,8 +88,79 @@ class BigMac : Hamburger
 }
 ~~~
 
+#### 裝飾類別，繼承漢堡類別
+~~~c#
+public abstract class BurgerDecoratorBase : Hamburger
+{
+    protected Hamburger _hamburger;
+
+    public BurgerDecoratorBase(Hamburger hamburger)
+    {
+        _hamburger = hamburger;
+    }
+}
+~~~
+
+#### 實際要加入漢堡的東西，繼承裝飾類別
+~~~c#
+// 加牛肉
+public class BeefDecorator : BurgerDecoratorBase
+{
+    public BeefDecorator(Hamburger hamburger) : base(hamburger)
+    {
+    }
+
+    public override string Name
+    {
+        get => _hamburger.Name + ", add Beef";
+    }
+
+    public override int Price
+    {
+        get => _hamburger.Price + 20;
+    }
+}
+
+// 加生菜
+public class LettuceDecorator : BurgerDecoratorBase
+{
+    public LettuceDecorator(Hamburger hamburger) : base(hamburger)
+    {
+    }
+
+    public override string Name
+    {
+        get => _hamburger.Name + ", add Lettuce";
+    }
+
+    public override int Price
+    {
+        get => _hamburger.Price + 5;
+    }
+}
+
+// 加酸黃瓜
+public class PicklesDecorator : BurgerDecoratorBase
+{
+    public PicklesDecorator(Hamburger hamburger) : base(hamburger)
+    {
+    }
+
+    public override string Name
+    {
+        get => _hamburger.Name + ", add Pickles";
+    }
+
+    public override int Price
+    {
+        get => _hamburger.Price + 5;
+    }
+}
+
+~~~
+
 ----------
 
-[[C#系列文章]](https://yu-qiao-hong.github.io/tags/#C%23)
+[[C# 系列文章]](https://yu-qiao-hong.github.io/tags/#C%23)
 
-[[Design Pattern系列文章]](https://yu-qiao-hong.github.io/tags/#Design+Pattern)
+[[Design Pattern 系列文章]](https://yu-qiao-hong.github.io/tags/#Design+Pattern)
