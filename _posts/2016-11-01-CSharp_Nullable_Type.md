@@ -2,7 +2,7 @@
 layout: post
 title: "C# Nullable Type"
 author: "Iverson Hong"
-modified: 2016-04-12
+modified: 2016-11-01
 tags: [C#]
 ---
 
