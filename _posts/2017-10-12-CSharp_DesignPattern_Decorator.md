@@ -42,8 +42,11 @@ tags: [C#, Design Pattern]
 
 寫一漢堡類別，允許可動態地增加其多種配料，並計算出最後價錢。
 
+##### UML：
 
-###### 定義一漢堡虛擬類別：
+![]({{ "/Images/Decorator Pattern/2019-11-03-23-45-35.png" | relative_url }})
+
+##### 定義一漢堡虛擬類別：
 ~~~c#
 public abstract class Hamburger
 {
@@ -53,7 +56,7 @@ public abstract class Hamburger
 }
 ~~~
 
-###### 定義兩個基本款漢堡；起司堡、大麥克：
+##### 定義兩個基本款漢堡；起司堡、大麥克：
 ~~~c#
 public class Cheeseburger : Hamburger
 {
@@ -82,7 +85,7 @@ class BigMac : Hamburger
 }
 ~~~
 
-###### 裝飾類別，繼承漢堡類別
+##### 裝飾類別，繼承漢堡類別：
 ~~~c#
 public abstract class BurgerDecoratorBase : Hamburger
 {
@@ -95,7 +98,7 @@ public abstract class BurgerDecoratorBase : Hamburger
 }
 ~~~
 
-###### 實際要加入漢堡的東西，繼承裝飾類別
+##### 實際要加入漢堡的東西，繼承裝飾類別：
 ~~~c#
 // 加牛肉
 public class BeefDecorator : BurgerDecoratorBase
@@ -152,8 +155,7 @@ public class PicklesDecorator : BurgerDecoratorBase
 }
 ~~~
 
-###### client 端
-
+##### client 端：
 ~~~c#
 Hamburger burger1 = new Cheeseburger();
 burger1 = new BeefDecorator(burger1); // +20
@@ -174,7 +176,7 @@ Console.WriteLine("burger2 Price: " + burger2.Price);
 Console.WriteLine("======================================");
 ~~~
 
-###### 輸出結果
+##### 輸出結果：
 ```
 burger1 Name: Cheeseburger, add Beef, add Lettuce, add Pickles, add Beef
 burger1 Price: 130
