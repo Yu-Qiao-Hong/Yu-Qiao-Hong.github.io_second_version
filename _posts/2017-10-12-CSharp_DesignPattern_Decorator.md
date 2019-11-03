@@ -3,7 +3,7 @@ layout: post
 title: "C# Decorator Pattern"
 author: "Iverson Hong"
 modified: 2018-11-03
-tags: [C#]
+tags: [C#, Design Pattern]
 ---
 
 ### 定義/使用時機
@@ -16,7 +16,7 @@ tags: [C#]
 
 屬於 Structural Patterns 之一
 
-![](..\images\2019-11-03-21-23-50.png)
+![]({{ "/images/2019-11-03-21-23-50.png" | relative_url }})
 
 ----------
 
@@ -39,5 +39,7 @@ tags: [C#]
 * 若裝飾的順序會影響功能，較不建議使用，理想情況是裝飾類別彼此之間獨立，這樣就可以任意排列組合使用。
 
 ----------
+
+[[C#系列文章]](http://yu-qiao-hong.github.io/tags/#C#)
 
 [[Design Pattern系列文章]](http://yu-qiao-hong.github.io/tags/#Design Pattern)
