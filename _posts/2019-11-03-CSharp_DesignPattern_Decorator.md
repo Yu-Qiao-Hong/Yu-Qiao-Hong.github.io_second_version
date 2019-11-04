@@ -2,7 +2,7 @@
 layout: post
 title: "C# Decorator Pattern"
 author: "Iverson Hong"
-modified: 2018-11-03
+modified: 2019-11-03
 tags: [C#, Design Pattern]
 ---
 
@@ -56,7 +56,7 @@ public abstract class Hamburger
 }
 ~~~
 
-#### 定義兩個基本款漢堡；起司堡、大麥克：
+#### 定義兩個基本款漢堡：起司堡、大麥克：
 ~~~c#
 public class Cheeseburger : Hamburger
 {

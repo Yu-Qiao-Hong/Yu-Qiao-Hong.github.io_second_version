@@ -2,7 +2,7 @@
 layout: post
 title: "C# Params"
 author: "Iverson Hong"
-modified: 2016-04-13
+modified: 2018-04-13
 tags: [C#]
 ---
 ### 使用時機
