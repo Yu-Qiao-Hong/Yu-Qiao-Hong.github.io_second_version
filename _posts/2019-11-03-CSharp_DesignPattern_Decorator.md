@@ -16,7 +16,7 @@ tags: [C#, Design Pattern]
 
 ![]({{ "/Images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
 
-~~~mermaid
+<div class="mermaid">
 classDiagram
 
 class Component{
@@ -45,7 +45,7 @@ Component <|-- Decorator
 Component <--o  Decorator
 Decorator <|-- ConcreteDecoratorA
 Decorator <|-- ConcreteDecoratorB
-~~~
+</div>
 
 ----------
 
