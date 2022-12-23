@@ -16,6 +16,37 @@ tags: [C#, Design Pattern]
 
 ![]({{ "/Images/Decorator Pattern/2019-11-03-21-23-50.png" | relative_url }})
 
+~~~mermaid
+classDiagram
+
+class Component{
+    +Operation()
+}
+
+class ConcreteComponent{
+    +Operation()
+}
+
+class Decorator{
+    -component: Component
+    +Operation()
+}
+
+class ConcreteDecoratorA{
+    +Operation()
+}
+
+class ConcreteDecoratorB{
+    +Operation()
+}
+
+Component <|-- ConcreteComponent
+Component <|-- Decorator
+Component <--o  Decorator
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+~~~
+
 ----------
 
 ### 優點
